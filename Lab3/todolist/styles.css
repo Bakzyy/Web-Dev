@@ -1,0 +1,38 @@
+#todo-app {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 300px;
+    margin: auto;
+}
+
+#new-task {
+    width: 70%;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+#tasks-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tasks-list li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+#tasks-list li.done {
+    text-decoration: line-through;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
