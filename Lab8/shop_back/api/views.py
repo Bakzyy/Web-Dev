@@ -4,10 +4,6 @@ from django.http import HttpResponse
 from django.http.response import JsonResponse
 from api.models import *
 
-
-def index(request):
-    return render(request, 'products/index.html')
-
 def products(request):
     prod = Product.objects.all()
     products_json = [p.to_json() for p in prod]
@@ -45,4 +41,4 @@ def get_products_by_category(request,id):
     except:
         products_json = []
     return JsonResponse(products_json, safe=False)
-# Create your views here.
+

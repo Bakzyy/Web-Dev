@@ -4,29 +4,29 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=128)
     
-    
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+        
     def to_json(self):
         return {
-            'id': self.id,
             'name': self.name
         }
 
 class Product(models.Model):
     name = models.CharField(max_length=256)
+    price = models.FloatField()
     description = models.TextField(null=True, blank=True)
-    price = models.DecimalField(max_digits=6 ,decimal_places=2)
     count = models.PositiveIntegerField(default=0)
-    image = models.ImageField(upload_to='product_images')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
 
     def to_json(self):
         return {
-            'id': self.id,
+            'id' : self.id,
             'name': self.name,
             'price': self.price,
+            'description': self.description,
             'count': self.count,
-            'image': self.image,
-            'category': self.category.name,
-            'is_active': self.is_active
+            'is_active': self.is_active  
         }
