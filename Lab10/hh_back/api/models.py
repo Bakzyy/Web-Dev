@@ -23,7 +23,6 @@ class Vacancy(models.Model):
     description = models.TextField()
     salary = models.FloatField()
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    
     class Meta:
         verbose_name = 'Vacancy'
         verbose_name_plural = 'Vacancies'
